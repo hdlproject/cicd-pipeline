@@ -6,7 +6,7 @@ function print_user_info() {
 }
 
 function is_admin() {
-  if [ $(whoami) = "hendradanulaksana" ]; then
+  if [[ $(whoami) = "hendradanulaksana" ]]; then
     return 0
   else
     return 1

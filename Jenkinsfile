@@ -1,10 +1,13 @@
 pipeline {
-    agent { docker { image 'node:14-alpine' } }
+    agent {
+        docker {
+            image 'ubuntu:18.04'
+        }
+    }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
-                sh './script/user_info.sh'
+                sh 'chmod +x ./script/user_info.sh && ./script/user_info.sh'
             }
         }
     }
